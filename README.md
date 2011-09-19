@@ -1,7 +1,114 @@
+# AssetRace
+
+### Fork Changelog (Pewpewarrows)
+
+The purpose of this fork is to drastically expand the test base and convert the
+project over into using Jekyll for quicker iterations.
+
 ### Testing asset load times one technique at a time.
 
 Fork and add yours.
 
 ### The Rules:
 
-You must serve all of the CSS and all of the JavaScript in `src`. Run `finish.js` after all of the assets have loaded. The elapsed time will be displayed.
+You must serve all of the CSS and all of the JavaScript in `static`. Run 
+`finish.js` after all of the assets have loaded. The elapsed time will be displayed.
+
+Please note that any arguments related to script loading solutions not playing
+nicely with inline script blocks on the page is a non-issue. The only
+non-external script tags on the page should be variables passed from your
+back-end, if any, and are only accessed after document.ready. For any code that
+you would otherwise need to only execute on specific pages, look no further than:
+
+http://www.viget.com/inspire/extending-paul-irishs-comprehensive-dom-ready-execution/
+
+### Tests:
+
+10 runs of each of these, first with no cache, then using the browser's cache
+All of these files have "Cache-Control: public, max-age=31536000" on them
+
+These tests need to be run separately in all major browsers, including
+previous, current, and next versions, unless otherwise specified:
+
+* Chrome
+* Firefox
+* IE (6+)
+* Safari
+* Opera
+
+Control group:
+
+* Plain files, each separately, in the head
+* Plain files, each separately, at the end
+
+Basic improvements:
+
+* Minified files, each separately, in the head
+* Minified files, each separately, at the end
+* Minified files, concatenated, in the head
+* Minified files, concatenated, at the end
+
+CDN Usage:
+
+* Minified files, each separately, in the head, jQuery from CDN
+* Minified files, each separately, at the end, jQuery from CDN
+* Minified files, concatenated, in the head, jQuery from CDN
+* Minified files, concatenated, at the end, jQuery from CDN
+
+Using script defer:
+
+* Minified files, each separately, in the head, defer attribute
+* Minified files, each separately, at the end, defer attribute
+* Minified files, concatenated, in the head, defer attribute
+* Minified files, concatenated, at the end, defer attribute
+* Minified files, each separately, in the head, defer attribute, jQuery from CDN
+* Minified files, each separately, at the end, defer attribute, jQuery from CDN
+* Minified files, concatenated, in the head, defer attribute, jQuery from CDN
+* Minified files, concatenated, at the end, defer attribute, jQuery from CDN
+
+(Raw script tag with async is untested since it cannot guarantee order of execution)
+
+Script tag insertion:
+
+* Minified files, each separately, in the head, with injected script tags
+* Minified files, each separately, at the end, with injected script tags
+* Minified files, concatenated, in the head, with injected script tags
+* Minified files, concatenated, at the end, with injected script tags
+* Minified files, each separately, in the head, with injected script tags, jQuery from CDN
+* Minified files, each separately, at the end, with injected script tags, jQuery from CDN
+* Minified files, concatenated, in the head, with injected script tags, jQuery from CDN
+* Minified files, concatenated, at the end, with injected script tags, jQuery from CDN
+
+(Defer doesn't exist for injected script tag, skipping)
+
+Script tag insertion using async:
+
+* Minified files, each separately, in the head, with injected script tags using async
+* Minified files, each separately, at the end, with injected script tags using async
+* Minified files, concatenated, in the head, with injected script tags using async
+* Minified files, concatenated, at the end, with injected script tags using async
+* Minified files, each separately, in the head, with injected script tags using async, jQuery from CDN
+* Minified files, each separately, at the end, with injected script tags using async, jQuery from CDN
+* Minified files, concatenated, in the head, with injected script tags using async, jQuery from CDN
+* Minified files, concatenated, at the end, with injected script tags using async, jQuery from CDN
+
+jQuery script loading
+
+* Minified files, each separately, in the head, using jQuery getScript
+* Minified files, each separately, at the end, using jQuery getScript
+* Minified files, concatenated, in the head, using jQuery getScript
+* Minified files, concatenated, at the end, using jQuery getScript
+* Minified files, each separately, in the head, using jQuery getScript, jQuery from CDN
+* Minified files, each separately, at the end, using jQuery getScript, jQuery from CDN
+* Minified files, concatenated, in the head, using jQuery getScript, jQuery from CDN
+* Minified files, concatenated, at the end, using jQuery getScript, jQuery from CDN
+
+YepNope script loading (from Modernizr)
+
+LABjs script loading
+
+RequireJS script loading
+
+ControlJS script loading
+
+HeadJS script loading
