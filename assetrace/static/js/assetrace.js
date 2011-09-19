@@ -91,11 +91,14 @@ var AssetRace = AssetRace || {};
 
     /* DOM Ready */
 	$(function() {
+        $('.results').append($('#early-results').html());
+        $('.results').append('<br/>DOMReady at ' + (+(new Date) - startTime) + 'ms');
         Site.init(AssetRace);
 	});
 
     /* Window Ready */
 	$(window).bind("load", function() {
+        $('.results').append('<br/>Onload at ' + (+(new Date) - startTime) + 'ms');
 	});
 
 })(this, this.document, jQuery);

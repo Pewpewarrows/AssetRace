@@ -1,6 +1,6 @@
 # AssetRace
 
-### Fork Changelog (Pewpewarrows)
+### Fork ChangeLog (Pewpewarrows)
 
 The purpose of this fork is to drastically expand the test base and convert the
 project over into using Jekyll for quicker iterations.
@@ -36,10 +36,14 @@ previous, current, and next versions, unless otherwise specified:
 * Safari
 * Opera
 
+Any sort of compression via gzip or deflate is ignored for now.
+
 Control group:
 
 * Plain files, each separately, in the head
 * Plain files, each separately, at the end
+* Plain files, concatenated, in the head
+* Plain files, concatenated, at the end
 
 Basic improvements:
 
@@ -66,7 +70,7 @@ Using script defer:
 * Minified files, concatenated, in the head, defer attribute, jQuery from CDN
 * Minified files, concatenated, at the end, defer attribute, jQuery from CDN
 
-(Raw script tag with async is untested since it cannot guarantee order of execution)
+(Raw script tag with async cannot guarantee order of execution, skipping)
 
 Script tag insertion:
 
