@@ -1,1 +1,2 @@
-permalink: /AssetRace/:title/
+permalink: /:title/
+baseurl: /AssetRace
