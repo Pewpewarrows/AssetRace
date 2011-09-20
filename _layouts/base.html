@@ -55,5 +55,26 @@
     <div class="results">
         {{ content }}
     </div>
+
+    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+    <!--
+        TODO: The fallback after this won't work anymore with defer
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript">!window.jQuery && document.write(unescape('%3Cscript src="/static/js/jquery-1.6.1.js"%3E%3C/script%3E'))</script>
+    -->
+
+    <!-- TODO: do some IE testing with/without conditional scripts -->
+    <!--[if lt IE 7 ]>
+    <![endif]-->
+
+    <!--
+    <script type="text/javascript">
+        // Grab our scripts async
+        var media_urls = [];
+        for (url in media_urls) {
+            $.getScript(media_urls[url]);
+        }
+    </script>
+    -->
 </body>
 </html>

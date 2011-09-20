@@ -68,7 +68,7 @@
                 }
             }
 
-            early_res.innerHTML += '<br/>DOMReady fired at: ' + (+(new Date) - startTime) + 'ms';
+            early_res.innerHTML += '<br/>DOMReady fired at ' + (+(new Date) - startTime) + 'ms';
         };
 
         (function() {
@@ -612,51 +612,5 @@
 
         early_res.innerHTML += '<br/>Page painted at ' + (+(new Date) - startTime) + 'ms';
     </script>
-
-    <!-- <script defer="true" src=""></script> -->
-
-    <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-    <!--
-        TODO: The fallback after this won't work anymore with defer
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script type="text/javascript">!window.jQuery && document.write(unescape('%3Cscript src="/static/js/jquery-1.6.1.js"%3E%3C/script%3E'))</script>
-    -->
-
-    <!--[if lt IE 7 ]>
-    <![endif]-->
-
-    <!--
-    <script type="text/javascript">
-        // Grab our scripts async
-        var media_urls = [];
-        for (url in media_urls) {
-            $.getScript(media_urls[url]);
-        }
-    </script>
-    -->
-
-    <!--
-    <script>
-        (function(d, t) {
-            var all = [''],
-                s = d.getElementsByTagName(t)[0],
-                e, i, j = 0;
-
-            for (var i in all) {
-                e = d.createElement(t);
-                e.async = true;
-                // TODO: confirm this is fine for https
-                e.src = all[i];
-                e.onload = e.onreadystatechange = function() {
-                    if (++j = all.length) {
-                        d.body.innerHTML += '<h1>Done: ' + (+(new Date) - startTime) + 'ms</h1>';
-                    }
-                };
-
-                s.parentNode.insertBefore(e, s);
-            }
-        })(document, 'script');
-    </script> 
-    -->
 </body>
 </html>
