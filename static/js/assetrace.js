@@ -51,8 +51,8 @@ var AssetRace = AssetRace || {};
             } else {
             }
 
-            self.static_url = '/static/';
-            self.media_url = '/uploads/';
+            self.static_url = '/AssetRace/static/';
+            self.media_url = '/AssetRace/uploads/';
         }
     };
 
@@ -82,11 +82,6 @@ var AssetRace = AssetRace || {};
                 AssetRace.settings.setup();
                 $('.results').append($('#early-results').html());
                 $('.results').append('<br/>Page-specific script ran at ' + (+(new Date) - startTime) + 'ms');
-            }
-        },
-
-        search: {
-            main: function() {
             }
         }
     };

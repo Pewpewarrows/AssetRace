@@ -25,7 +25,7 @@ http://www.viget.com/inspire/extending-paul-irishs-comprehensive-dom-ready-execu
 ### Tests:
 
 10 runs of each of these, first with no cache, then using the browser's cache
-All of these files have "Cache-Control: public, max-age=31536000" on them
+All of these files should have "Cache-Control: public, max-age=31536000" on them
 
 These tests need to be run separately in all major browsers, including
 previous, current, and next versions, unless otherwise specified:
@@ -107,18 +107,10 @@ Script tag insertion:
 
 Script tag insertion using async:
 
-* Minified files, each separately, in the head, with injected script tags using async
-* Minified files, each separately, at the end, with injected script tags using async
 * Minified files, concatenated, in the head, with injected script tags using async
 * Minified files, concatenated, at the end, with injected script tags using async
-* Minified files, bundled, in the head, with injected script tags using async
-* Minified files, bundled, at the end, with injected script tags using async
-* Minified files, each separately, in the head, with injected script tags using async, jQuery from CDN
-* Minified files, each separately, at the end, with injected script tags using async, jQuery from CDN
-* Minified files, concatenated, in the head, with injected script tags using async, jQuery from CDN
-* Minified files, concatenated, at the end, with injected script tags using async, jQuery from CDN
-* Minified files, bundled, in the head, with injected script tags using async, jQuery from CDN
-* Minified files, bundled, at the end, with injected script tags using async, jQuery from CDN
+
+(Other async testing would produce worthless results, due to execution order)
 
 jQuery script loading
 
