@@ -38,12 +38,17 @@ previous, current, and next versions, unless otherwise specified:
 
 Any sort of compression via gzip or deflate is ignored for now.
 
+"Bundled" means having an intelligent split of concatenated files, such as
+a lib.js and an app.js, for finer grained cachability.
+
 Control group:
 
 * Plain files, each separately, in the head
 * Plain files, each separately, at the end
 * Plain files, concatenated, in the head
 * Plain files, concatenated, at the end
+* Plain files, bundled, in the head
+* Plain files, bundled, at the end
 
 Basic improvements:
 
@@ -51,6 +56,8 @@ Basic improvements:
 * Minified files, each separately, at the end
 * Minified files, concatenated, in the head
 * Minified files, concatenated, at the end
+* Minified files, bundled, in the head
+* Minified files, bundled, at the end
 
 CDN Usage:
 
@@ -58,6 +65,8 @@ CDN Usage:
 * Minified files, each separately, at the end, jQuery from CDN
 * Minified files, concatenated, in the head, jQuery from CDN
 * Minified files, concatenated, at the end, jQuery from CDN
+* Minified files, bundled, in the head, jQuery from CDN
+* Minified files, bundled, at the end, jQuery from CDN
 
 Using script defer:
 
@@ -65,10 +74,14 @@ Using script defer:
 * Minified files, each separately, at the end, defer attribute
 * Minified files, concatenated, in the head, defer attribute
 * Minified files, concatenated, at the end, defer attribute
+* Minified files, bundled, in the head, defer attribute
+* Minified files, bundled, at the end, defer attribute
 * Minified files, each separately, in the head, defer attribute, jQuery from CDN
 * Minified files, each separately, at the end, defer attribute, jQuery from CDN
 * Minified files, concatenated, in the head, defer attribute, jQuery from CDN
 * Minified files, concatenated, at the end, defer attribute, jQuery from CDN
+* Minified files, bundled, in the head, defer attribute, jQuery from CDN
+* Minified files, bundled, at the end, defer attribute, jQuery from CDN
 
 (Raw script tag with async cannot guarantee order of execution, skipping)
 
@@ -78,10 +91,14 @@ Script tag insertion:
 * Minified files, each separately, at the end, with injected script tags
 * Minified files, concatenated, in the head, with injected script tags
 * Minified files, concatenated, at the end, with injected script tags
+* Minified files, bundled, in the head, with injected script tags
+* Minified files, bundled, at the end, with injected script tags
 * Minified files, each separately, in the head, with injected script tags, jQuery from CDN
 * Minified files, each separately, at the end, with injected script tags, jQuery from CDN
 * Minified files, concatenated, in the head, with injected script tags, jQuery from CDN
 * Minified files, concatenated, at the end, with injected script tags, jQuery from CDN
+* Minified files, bundled, in the head, with injected script tags, jQuery from CDN
+* Minified files, bundled, at the end, with injected script tags, jQuery from CDN
 
 (Defer doesn't exist for injected script tag, skipping)
 
@@ -91,10 +108,14 @@ Script tag insertion using async:
 * Minified files, each separately, at the end, with injected script tags using async
 * Minified files, concatenated, in the head, with injected script tags using async
 * Minified files, concatenated, at the end, with injected script tags using async
+* Minified files, bundled, in the head, with injected script tags using async
+* Minified files, bundled, at the end, with injected script tags using async
 * Minified files, each separately, in the head, with injected script tags using async, jQuery from CDN
 * Minified files, each separately, at the end, with injected script tags using async, jQuery from CDN
 * Minified files, concatenated, in the head, with injected script tags using async, jQuery from CDN
 * Minified files, concatenated, at the end, with injected script tags using async, jQuery from CDN
+* Minified files, bundled, in the head, with injected script tags using async, jQuery from CDN
+* Minified files, bundled, at the end, with injected script tags using async, jQuery from CDN
 
 jQuery script loading
 
@@ -102,10 +123,14 @@ jQuery script loading
 * Minified files, each separately, at the end, using jQuery getScript
 * Minified files, concatenated, in the head, using jQuery getScript
 * Minified files, concatenated, at the end, using jQuery getScript
+* Minified files, bundled, in the head, using jQuery getScript
+* Minified files, bundled, at the end, using jQuery getScript
 * Minified files, each separately, in the head, using jQuery getScript, jQuery from CDN
 * Minified files, each separately, at the end, using jQuery getScript, jQuery from CDN
 * Minified files, concatenated, in the head, using jQuery getScript, jQuery from CDN
 * Minified files, concatenated, at the end, using jQuery getScript, jQuery from CDN
+* Minified files, bundled, in the head, using jQuery getScript, jQuery from CDN
+* Minified files, bundled, at the end, using jQuery getScript, jQuery from CDN
 
 YepNope script loading (from Modernizr)
 
@@ -116,3 +141,4 @@ RequireJS script loading
 ControlJS script loading
 
 HeadJS script loading
+
