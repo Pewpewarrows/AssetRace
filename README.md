@@ -86,22 +86,12 @@ Using script defer:
 * Minified files, bundled, in the head, defer attribute, jQuery from CDN
 * Minified files, bundled, at the end, defer attribute, jQuery from CDN
 
-(Raw script tag with async cannot guarantee order of execution, skipping)
+(normal script tag injection cannot guarantee order of execution, many tests skipped)
 
 Script tag insertion:
 
-* Minified files, each separately, in the head, with injected script tags
-* Minified files, each separately, at the end, with injected script tags
 * Minified files, concatenated, in the head, with injected script tags
 * Minified files, concatenated, at the end, with injected script tags
-* Minified files, bundled, in the head, with injected script tags
-* Minified files, bundled, at the end, with injected script tags
-* Minified files, each separately, in the head, with injected script tags, jQuery from CDN
-* Minified files, each separately, at the end, with injected script tags, jQuery from CDN
-* Minified files, concatenated, in the head, with injected script tags, jQuery from CDN
-* Minified files, concatenated, at the end, with injected script tags, jQuery from CDN
-* Minified files, bundled, in the head, with injected script tags, jQuery from CDN
-* Minified files, bundled, at the end, with injected script tags, jQuery from CDN
 
 (Defer doesn't exist for injected script tag, skipping)
 
@@ -109,8 +99,6 @@ Script tag insertion using async:
 
 * Minified files, concatenated, in the head, with injected script tags using async
 * Minified files, concatenated, at the end, with injected script tags using async
-
-(Other async testing would produce worthless results, due to execution order)
 
 jQuery script loading
 
