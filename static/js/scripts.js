@@ -11351,6 +11351,8 @@ var AssetRace = AssetRace || {};
             // This function will fire on every page first
             init: function() {
                 AssetRace.settings.setup();
+                $('.results').append($('#early-results').html());
+                $('.results').append('<br/>Page-specific script ran at ' + (+(new Date) - startTime) + 'ms');
             }
         },
 
@@ -11362,8 +11364,6 @@ var AssetRace = AssetRace || {};
 
     /* DOM Ready */
 	$(function() {
-        $('.results').append($('#early-results').html());
-        $('.results').append('<br/>DOMReady at ' + (+(new Date) - startTime) + 'ms');
         Site.init(AssetRace);
 	});
 
