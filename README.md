@@ -41,6 +41,9 @@ Any sort of compression via gzip or deflate is ignored for now.
 "Bundled" means having an intelligent split of concatenated files, such as
 a lib.js and an app.js, for finer grained cachability.
 
+Also note that all of the tests involving jQuery being loaded from CDN are open
+to scrutiny, since they are at the mercy of Google's CDN speeds.
+
 Control group:
 
 * Plain files, each separately, in the head
