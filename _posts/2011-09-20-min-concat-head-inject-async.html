@@ -1,0 +1,22 @@
+---
+layout: base_top
+---
+
+<script type="text/javascript">
+    (function(d, t) {
+        var all = [
+                '{{ site.baseurl }}/static/js/scripts.min.js'
+            ],
+            s = d.getElementsByTagName(t)[0],
+            e, i;
+
+        for (var i in all) {
+            e = d.createElement(t);
+            e.async = true;
+            // TODO: confirm this is fine for https
+            e.src = all[i];
+
+            s.parentNode.insertBefore(e, s);
+        }
+    })(document, 'script');
+</script>

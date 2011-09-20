@@ -1,0 +1,28 @@
+---
+layout: base_bot
+---
+
+<script type="text/javascript">
+    (function(d, t) {
+        var all = [
+                '{{ site.baseurl }}/static/js/lib/json2.min.js',
+                '{{ site.baseurl }}/static/js/lib/jquery-1.6.1.min.js',
+                '{{ site.baseurl }}/static/js/lib/underscore.min.js',
+                '{{ site.baseurl }}/static/js/lib/backbone.min.js',
+                '{{ site.baseurl }}/static/js/utils.min.js',
+                '{{ site.baseurl }}/static/js/assetrace.min.js',
+                '{{ site.baseurl }}/static/js/finish.min.js'
+            ],
+            s = d.getElementsByTagName(t)[0],
+            e, i;
+
+        for (var i in all) {
+            e = d.createElement(t);
+            e.async = true;
+            // TODO: confirm this is fine for https
+            e.src = all[i];
+
+            s.parentNode.insertBefore(e, s);
+        }
+    })(document, 'script');
+</script>
